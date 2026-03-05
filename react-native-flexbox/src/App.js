@@ -26,31 +26,32 @@ const PreviewLayout = ({
         </TouchableOpacity>
       ))}
     </View>
-    <View style={[styles.container, {[label]: selectedValue}]}>{children}</View>
+    <View style={styles.container}>{children}</View>
   </View>
 );
 
-const AlignItemsLayout = () => {
-  const [alignItems, setAlignItems] = useState('stretch');
+const AlignSelfLayout = () => {
+  const [alignSelf, setAlignSelf] = useState('stretch');
 
   return (
     <PreviewLayout
-      label="alignItems"
-      selectedValue={alignItems}
+      label="alignSelf"
+      selectedValue={alignSelf}
       values={['stretch', 'flex-start', 'flex-end', 'center', 'baseline']}
-      setSelectedValue={setAlignItems}>
-      <View style={[styles.box, {backgroundColor: 'powderblue'}]} />
-      <View style={[styles.box, {backgroundColor: 'skyblue'}]} />
+      setSelectedValue={setAlignSelf}>
       <View
         style={[
           styles.box,
           {
-            backgroundColor: 'steelblue',
+            alignSelf,
             width: 'auto',
             minWidth: 50,
+            backgroundColor: 'powderblue',
           },
         ]}
       />
+      <View style={[styles.box, {backgroundColor: 'skyblue'}]} />
+      <View style={[styles.box, {backgroundColor: 'steelblue'}]} />
     </PreviewLayout>
   );
 };
@@ -100,4 +101,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AlignItemsLayout;
+export default AlignSelfLayout;
