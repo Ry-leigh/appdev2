@@ -13,8 +13,8 @@ import {
 } from "react-native";
 
 import { useQuery, useMutation } from "convex/react";
-import { api } from "../convex/_generated/api";
-import { Id } from "../convex/_generated/dataModel";
+import { api } from "../../convex/_generated/api";
+import { Id } from "../../convex/_generated/dataModel";
 const TodoScreen = () => {
     const [task, setTask] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
